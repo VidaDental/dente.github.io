@@ -241,3 +241,15 @@ jQuery(document).ready(function($) {
 	siteDatePicker();
 
 });
+
+const track = document.getElementById('servicesTrack');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+nextBtn.addEventListener('click', () => {
+  track.scrollBy({ left: 300, behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+  track.scrollBy({ left: -300, behavior: 'smooth' });
+});
