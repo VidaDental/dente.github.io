@@ -242,14 +242,86 @@ jQuery(document).ready(function($) {
 
 });
 
-const track = document.getElementById('servicesTrack');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
+// Services Row Next Button Slider
+const servicesRow = document.querySelector('.services-row');
+const servicesPrevBtn = document.querySelector('.services-prev-btn');
+const servicesNextBtn = document.querySelector('.services-next-btn');
+const servicesRowWrapper = document.querySelector('.services-row-wrapper');
 
-nextBtn.addEventListener('click', () => {
-  track.scrollBy({ left: 300, behavior: 'smooth' });
-});
+if (servicesRow && servicesPrevBtn && servicesNextBtn && servicesRowWrapper) {
+    const getVisibleCards = () => {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 4;
+    };
 
-prevBtn.addEventListener('click', () => {
-  track.scrollBy({ left: -300, behavior: 'smooth' });
-});
+    let currentIndex = 0;
+
+    const updateServicesSlider = () => {
+        const cards = servicesRow.querySelectorAll('.service-card');
+        const visibleCards = getVisibleCards();
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+        const gap = 16;
+        const cardWidth = cards[0] ? cards[0].offsetWidth : 0;
+
+        if (currentIndex > maxIndex) {
+            currentIndex = 0;
+        }
+
+        servicesRow.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+        const singlePage = cards.length <= visibleCards;
+        servicesPrevBtn.disabled = singlePage;
+        servicesNextBtn.disabled = singlePage;
+    };
+
+    const goToNext = () => {
+        const cards = servicesRow.querySelectorAll('.service-card');
+        const visibleCards = getVisibleCards();
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+
+        if (maxIndex === 0) return;
+
+        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+        updateServicesSlider();
+    };
+
+    const goToPrev = () => {
+        const cards = servicesRow.querySelectorAll('.service-card');
+        const visibleCards = getVisibleCards();
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+
+        if (maxIndex === 0) return;
+
+        currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+        updateServicesSlider();
+    };
+
+    servicesNextBtn.addEventListener('click', () => {
+        goToNext();
+    });
+
+    servicesPrevBtn.addEventListener('click', () => {
+        goToPrev();
+    });
+
+    let autoplayTimer = setInterval(goToNext, 3500);
+
+    const restartAutoplay = () => {
+        clearInterval(autoplayTimer);
+        autoplayTimer = setInterval(goToNext, 3500);
+    };
+
+    servicesNextBtn.addEventListener('click', restartAutoplay);
+    servicesPrevBtn.addEventListener('click', restartAutoplay);
+
+    servicesRowWrapper.addEventListener('mouseenter', () => {
+        clearInterval(autoplayTimer);
+    });
+
+    servicesRowWrapper.addEventListener('mouseleave', () => {
+        restartAutoplay();
+    });
+
+    window.addEventListener('resize', updateServicesSlider);
+    updateServicesSlider();
+}
