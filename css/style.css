@@ -121,20 +121,7 @@ a {
     width: 40px;
     height: 2px;
     background: #f23a2e; }
-@media (max-width: 767px) {
-  .site-section .col-md-6, 
-  .site-section .col-lg-4 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    display: block !important;
-    margin-bottom: 40px; /* Spațiu între serviciul 1 și serviciul 2 */
-  }
-  
-  .unit-4 {
-    padding: 20px !important;
-  }
-}
+
 
 .border-top {
   border-top: 1px solid #edf0f5 !important; }
@@ -1209,4 +1196,52 @@ a {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
     margin: 0;
     pointer-events: none;
+}
+/* REPARARE MOBIL - ADAUGĂ LA FINALUL CSS */
+@media (max-width: 767px) {
+    /* 1. Face secțiunea să nu mai fie lipită de margini */
+    .services {
+        padding: 40px 15px !important;
+    }
+
+    /* 2. Titlurile mari (56px) devin lizibile pe telefon */
+    .services-header h2, 
+    .service-info h3 {
+        font-size: 32px !important;
+        line-height: 1.2;
+    }
+
+    /* 3. Transformă GRID-ul (2 coloane) în listă verticală (1 coloană) */
+    .service-featured {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        min-height: auto !important;
+    }
+
+    /* 4. Repară CARUSELUL / CARDURILE (din 4 pe rând în 1 pe rând) */
+    .services-row {
+        flex-direction: column !important; /* Le pune unul sub altul */
+        gap: 25px !important;
+    }
+
+    .service-card {
+        flex: 0 0 100% !important; /* Ocupă tot latul ecranului */
+        width: 100% !important;
+    }
+
+    /* 5. Ajustează înălțimea pozelor să nu ocupe tot ecranul */
+    .service-image-large img,
+    .service-img {
+        height: 300px !important;
+    }
+
+    /* 6. Ascunde săgețile de carusel pe mobil (se face scroll natural) */
+    .services-prev-btn, 
+    .services-next-btn {
+        display: none !important;
+    }
+    
+    .services-row-wrapper {
+        padding: 0 !important;
+    }
 }
