@@ -325,3 +325,27 @@ if (servicesRow && servicesPrevBtn && servicesNextBtn && servicesRowWrapper) {
     window.addEventListener('resize', updateServicesSlider);
     updateServicesSlider();
 }
+const section = document.querySelector('.reveal-section');
+const rows = document.querySelectorAll('.reveal-row');
+
+section.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    // Calculăm distanța față de centru
+    const moveX = (clientX - centerX) / 25;
+    const moveY = (clientY - centerY) / 25;
+
+    rows.forEach((row, index) => {
+        // Fiecare rând se mișcă puțin diferit pentru efect de adâncime
+        const speed = (index + 1) * 0.5;
+        row.style.transform = `translate(${moveX * speed}px, ${moveY * speed}px) scale(1.1)`;
+    });
+});
+
+section.addEventListener('mouseleave', () => {
+    rows.forEach(row => {
+        row.style.transform = `translate(0, 0) scale(1)`;
+    });
+});
