@@ -91,38 +91,44 @@ border-radius: 25px; }
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
 .form-container {
-    position: relative; /* Creează contextul pentru straturi */
-    overflow: hidden;   /* Ascunde marginile blurate care ies în afară */
-    padding: 80px 20px;
-    border-radius: 20px;
-    background: none !important; /* Scoatem fundalul direct de aici */
+    position: relative;
+    width: 100vw;       /* Forțează lățimea întregului vizor (viewport) */
+    left: 50%;          /* Tehnica pentru a "evada" din containere părinte dacă e cazul */
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    overflow: hidden;
+    padding: 40px 0;    /* Ajustează înălțimea secțiunii de aici */
+    background: none !important;
 }
+
 .form-container::before {
     content: "";
     position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
     
     background-image: url('../images/programare.jpg') !important;
-    background-size: cover;
-    background-position: center;
+    background-size: cover;        /* Umple tot spațiul fără a deforma */
+    background-position: center;   /* Centrează imaginea */
     
-    filter: blur(2px); /* Aici aplicăm blurul */
-    transform: scale(1.1); /* Mărim puțin ca să nu avem margini albe */
-    z-index: 1; /* Îl punem pe stratul 1 */
+    filter: blur(2px);
+    transform: scale(1.1);
+    z-index: 1;
 }
+
+/* Caseta albă a formularului rămâne centrată și limitată */
 .form-container form {
-    position: relative !important; 
-    z-index: 2 !important; /* Mai mare decât 1-ul de la ::before */
-    
-    
-    padding: 40px;
-    border-radius: 20px;
-    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    max-width: 800px;  /* Formularul nu va fi lat cât tot ecranul, doar fundalul */
     margin: 0 auto;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 20px;
 }
 .site-section {
   padding: 2.5em 0; }
@@ -969,6 +975,7 @@ border-radius: 25px; }
     }
 
 /* Services Section */
+
 .services {
     padding: 100px 40px;
     background: var(--color-bg);
@@ -1250,3 +1257,127 @@ border-radius: 25px; }
     margin: 0;
     pointer-events: none;
 }
+/* Stiluri pentru Mobil */
+@media (max-width: 767px) {
+    .services { padding: 60px 20px; }
+    .services-header { flex-direction: column; align-items: flex-start; gap: 20px; padding: 0; margin-bottom: 40px; }
+    .services-header h2 { font-size: 32px; }
+    .service-featured { grid-template-columns: 1fr; gap: 30px; min-height: auto; }
+    .service-image-large img { height: 350px; }
+    .service-info h3 { font-size: 28px; }
+    .services-row-wrapper { padding: 0; }
+    .service-card { flex: 0 0 100%; }
+    .service-img { height: 450px; }
+    .services-prev-btn, .services-next-btn { width: 40px; height: 40px; font-size: 24px; background: rgba(255, 255, 255, 0.8); }
+    .services-prev-btn { left: 5px; }
+    .services-next-btn { right: 5px; }
+}
+
+.btn-primary {
+    width: 100% !important;      /* Îl face să ocupe toată lățimea disponibilă */
+    display: block !important;    /* Asigură că se comportă ca un element de tip bloc */
+    
+    height: 47px !important;     /* Aceeași înălțime ca restul câmpurilor (.form-control) */
+    border-radius: 25px !important; /* Îl face perfect rotund la capete */
+    
+    background-color: #f23a2e !important; /* Culoarea roșie pe care o folosești */
+    border: none !important;
+    font-weight: bold;
+    color: white;
+    
+    transition: 0.3s ease;       /* Face efectul de hover mai fin */
+    cursor: pointer;
+}
+
+/* Efect la trecerea cu mouse-ul */
+.btn-primary:hover {
+    background-color: #d12f25 !important; /* Un roșu puțin mai închis la hover */
+    transform: translateY(-1px);          /* Se ridică ușor la hover pentru un aspect modern */
+}
+
+
+/* Reset pentru a elimina marginile albe ale paginii */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.smashing-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupă tot ecranul pe înălțime */
+    background-color: #12151a; 
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* REVENIRE LA COVER: Imaginea umple tot ecranul */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Tranziție fină între imagini */
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s ease;
+}
+
+/* Imaginea de dedesubt */
+.hidden-layer {
+    z-index: 1;
+    opacity: 0;
+}
+
+/* Imaginea de deasupra */
+.visible-layer {
+    z-index: 2;
+    opacity: 1;
+}
+
+/* EFECTUL LA HOVER: Schimbarea imaginilor */
+.smashing-container:hover .visible-layer {
+    opacity: 0;
+}
+
+.smashing-container:hover .hidden-layer {
+    opacity: 1;
+}
+
+/* Efect discret de zoom la hover, ca pe SmashingLogo */
+.smashing-container:hover .layer {
+    transform: scale(1.05);
+}
+/* Elimină marginea de sub secțiunea cu imagini */
+.smashing-container {
+    margin-bottom: 0 !important;
+}
+
+/* Elimină spațiul de deasupra secțiunii de programare imediat următoare */
+.smashing-container + .site-section.site-block-appointment {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Dacă site-ul tău folosește Bootstrap, acesta pune adesea padding pe containerul interior */
+.smashing-container + .site-section.site-block-appointment .container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+@media (max-width: 480px) {
+    .smashing-container {
+        height: auto !important; 
+        aspect-ratio: 16 / 9; /* Forțează secțiunea să păstreze forma unei poze */
+    }
+    .layer {
+        background-size: contain; /* Nu mai taie deloc din ea pe ecrane foarte mici */
+    }
+}
+
+
