@@ -349,3 +349,14 @@ section.addEventListener('mouseleave', () => {
         row.style.transform = `translate(0, 0) scale(1)`;
     });
 });
+window.addEventListener("load", function() {
+    const loader = document.getElementById("preloader");
+    
+    // Adăugăm clasa care îl face transparent
+    loader.classList.add("loader-hidden");
+    
+    // Opțional: eliminăm elementul din DOM după ce s-a terminat tranziția
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 500); 
+});
