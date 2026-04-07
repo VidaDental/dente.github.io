@@ -346,13 +346,15 @@ section.addEventListener('mousemove', (e) => {
 
 window.addEventListener("load", function() {
     const loader = document.getElementById("preloader");
-    if (loader) {
+    
+    // Adăugăm o întârziere artificială de 2 secunde (2000 ms)
+    setTimeout(() => {
         loader.classList.add("loader-hidden");
-        // Îl scoatem complet de pe ecran după animație
+        
         setTimeout(() => {
             loader.style.display = "none";
-        }, 600);
-    }
+        }, 1000); // Timpul până când dispare complet din cod
+    }, 2000); // MODIFICĂ AICI: 2000 înseamnă 2 secunde de așteptare
 });
 
 // "Safety switch": Dacă după 5 secunde tot nu a dispărut, îl închidem forțat
