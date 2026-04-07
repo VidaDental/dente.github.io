@@ -344,19 +344,22 @@ section.addEventListener('mousemove', (e) => {
     });
 });
 
-section.addEventListener('mouseleave', () => {
-    rows.forEach(row => {
-        row.style.transform = `translate(0, 0) scale(1)`;
-    });
-});
 window.addEventListener("load", function() {
     const loader = document.getElementById("preloader");
-    
-    // Adăugăm clasa care îl face transparent
-    loader.classList.add("loader-hidden");
-    
-    // Opțional: eliminăm elementul din DOM după ce s-a terminat tranziția
-    setTimeout(() => {
-        loader.style.display = "none";
-    }, 500); 
+    if (loader) {
+        loader.classList.add("loader-hidden");
+        // Îl scoatem complet de pe ecran după animație
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 600);
+    }
 });
+
+// "Safety switch": Dacă după 5 secunde tot nu a dispărut, îl închidem forțat
+setTimeout(() => {
+    const loader = document.getElementById("preloader");
+    if (loader && !loader.classList.contains("loader-hidden")) {
+        loader.classList.add("loader-hidden");
+        setTimeout(() => { loader.style.display = "none"; }, 600);
+    }
+}, 5000); 
