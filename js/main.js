@@ -347,21 +347,23 @@ section.addEventListener('mousemove', (e) => {
 window.addEventListener("load", function() {
     const loader = document.getElementById("preloader");
     
-    // Adăugăm o întârziere artificială de 2 secunde (2000 ms)
+    // Așteptăm 4 secunde înainte să începem dispariția (fade-out)
     setTimeout(() => {
         loader.classList.add("loader-hidden");
         
+        // După ce fade-out-ul e gata (aprox 1s), scoatem elementul de tot
         setTimeout(() => {
             loader.style.display = "none";
-        }, 1000); // Timpul până când dispare complet din cod
-    }, 4000); // MODIFICĂ AICI: 2000 înseamnă 2 secunde de așteptare
+        }, 1000); 
+    }, 4000); // Aici ai pus cele 4 secunde
 });
 
-// "Safety switch": Dacă după 5 secunde tot nu a dispărut, îl închidem forțat
+// MODIFICARE: Mărim timpul de siguranță la 10 secunde (10000) 
+// ca să nu se bată cap în cap cu cele 4 secunde de mai sus
 setTimeout(() => {
     const loader = document.getElementById("preloader");
     if (loader && !loader.classList.contains("loader-hidden")) {
         loader.classList.add("loader-hidden");
-        setTimeout(() => { loader.style.display = "none"; }, 600);
+        setTimeout(() => { loader.style.display = "none"; }, 1000);
     }
-}, 5000); 
+}, 10000); 
