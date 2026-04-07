@@ -354,7 +354,7 @@ window.addEventListener("load", function() {
         setTimeout(() => {
             loader.style.display = "none";
         }, 1000); // Timpul până când dispare complet din cod
-    }, 2000); // MODIFICĂ AICI: 2000 înseamnă 2 secunde de așteptare
+    }, 3000); // MODIFICĂ AICI: 2000 înseamnă 2 secunde de așteptare
 });
 
 // "Safety switch": Dacă după 5 secunde tot nu a dispărut, îl închidem forțat
