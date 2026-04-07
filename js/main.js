@@ -344,39 +344,29 @@ section.addEventListener('mousemove', (e) => {
     });
 });
 
-(function() {
+window.addEventListener("DOMContentLoaded", () => {
     const loader = document.getElementById("preloader");
     const logo = document.querySelector(".loader-logo");
 
     if (loader) {
-        // Cele 2 secunde (2000ms) de așteptare fixă
+        // Cele 2 secunde de așteptare garantată
         setTimeout(() => {
-            
-            // Pas 1: Aplicăm zoom out pe logo
+            // 1. Zoom out logo
             if (logo) {
+                logo.style.animation = "none"; 
                 logo.classList.add("logo-zoom-out");
             }
-            
-            // Pas 2: Pornim dispariția fundalului gri după 200ms
+
+            // 2. Fade out fundal gri (după ce începe zoom-ul)
             setTimeout(() => {
                 loader.classList.add("loader-hidden");
                 
-                // Pas 3: Scoatem elementul din DOM după ce se termină tranziția CSS
+                // 3. Eliminare completă din pagină
                 setTimeout(() => {
                     loader.style.display = "none";
-                }, 1500); 
-            }, 200); 
-            
-        }, 2000); // DURATA TOTALĂ: 2 secunde
-    }
-})();
+                }, 1000);
+            }, 300);
 
-// MODIFICARE: Mărim timpul de siguranță la 10 secunde (10000) 
-// ca să nu se bată cap în cap cu cele 4 secunde de mai sus
-setTimeout(() => {
-    const loader = document.getElementById("preloader");
-    if (loader && !loader.classList.contains("loader-hidden")) {
-        loader.classList.add("loader-hidden");
-        setTimeout(() => { loader.style.display = "none"; }, 1000);
+        }, 2000); 
     }
-}, 10000); 
+});
