@@ -346,16 +346,24 @@ section.addEventListener('mousemove', (e) => {
 
 window.addEventListener("load", function() {
     const loader = document.getElementById("preloader");
+    const logo = document.querySelector(".loader-logo"); // Selectăm logo-ul
     
-    // Așteptăm 4 secunde înainte să începem dispariția (fade-out)
     setTimeout(() => {
-        loader.classList.add("loader-hidden");
+        // Pas 1: Aplicăm zoom out pe logo
+        if (logo) {
+            logo.classList.add("logo-zoom-out");
+        }
         
-        // După ce fade-out-ul e gata (aprox 1s), scoatem elementul de tot
+        // Pas 2: După o mică întârziere (ex: 200ms), începem să ascundem fundalul gri
         setTimeout(() => {
-            loader.style.display = "none";
-        }, 1000); 
-    }, 4000); // Aici ai pus cele 4 secunde
+            loader.classList.add("loader-hidden");
+            
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 1000); 
+        }, 200); 
+        
+    }, 4000); // Durata de 4 secunde dorită de tine
 });
 
 // MODIFICARE: Mărim timpul de siguranță la 10 secunde (10000) 
