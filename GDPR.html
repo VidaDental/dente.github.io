@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VidaDental - GDPR</title>
+    <link rel="icon" type="image/png" href="images/vidadentalicon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900"> 
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    
+    
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body>
+  <!-- 1. Preloader-ul trebuie să fie PRIMUL element din body -->
+    <div id="preloader">
+        <div class="loader-content">
+            <img src="images/logo.png" alt="Logo" class="loader-logo">
+        </div>
+    </div>
+
+    <!-- ... Restul conținutului site-ului tău (header, section, etc) ... -->
+
+    <!-- 2. Scriptul trebuie să fie ULTIMUL element, chiar înainte de </body> -->
+    <script>
+        // Folosim o funcție care se auto-execută pentru siguranță
+        (function() {
+            const loader = document.getElementById("preloader");
+            
+            if (loader) {
+                // Ascundem preloader-ul când totul e gata
+                window.addEventListener("load", function() {
+                    loader.classList.add("loader-hidden");
+                    setTimeout(() => {
+                        loader.style.display = "none";
+                    }, 600);
+                });
+
+                // Fail-safe: îl închidem după 3 secunde orice ar fi
+                setTimeout(() => {
+                    if (loader.style.display !== "none") {
+                        loader.classList.add("loader-hidden");
+                        setTimeout(() => { loader.style.display = "none"; }, 600);
+                    }
+                }, 3000);
+            }
+        })();
+    </script>
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+    
+    <div class="site-navbar-wrap">
+      <div class="site-navbar-top">
+        <div class="container py-2">
+          <div class="row align-items-center">
+            <div class="col-6">
+              
+              <a href="https://www.facebook.com/p/Vidadental-100063529540250/" class="p-2 pl-0"><span class="icon-facebook"></span></a>
+             
+              <a href="https://www.instagram.com/vidadentalclinic/" class="p-2 pl-0"><span class="icon-instagram"></span></a>
+              <a href="https://wa.me/40745166956?text=Bună%20ziua,%20doresc%20o%20programare."" target="_blank" class="pl-3 pr-3"><span class="icon-whatsapp"></span></a>
+            </div>
+            <div class="col-6">
+              <div class="d-flex ml-auto">
+                <a href="tel:0745166956" class="d-flex align-items-center ml-auto mr-4">
+                  <span class="icon-phone mr-2"></span>
+                  <span class="d-none d-md-inline-block"> 0745 166 956</span>
+                </a>
+                <a href="mailto:contact@vidadental.ro" class="d-flex align-items-center">
+                  <span class="icon-envelope mr-2"></span>
+                  <span class="d-none d-md-inline-block"><a href="mailto:contact@vidadental.ro">contact@vidadental.ro</a></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="site-navbar">
+        <div class="container py-1">
+          <div class="row align-items-center">
+            <div class="col-2">
+              <h2 class="mb-0 site-logo"><a href="index.html">VidaDental</a></h2>
+            </div>
+            <div class="col-10">
+              <nav class="site-navigation text-right" role="navigation">
+                <div class="container">
+                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+                  <ul class="site-menu js-clone-nav d-none d-lg-block">
+                    <li class="has-children active">
+                      <div class="nav-links">
+               <li><a href="index.html">Acasă</a></li>
+              <li>  <a href="#servicii">Servicii</a></li>
+                <li><a href="despre-noi.html">Despre Noi</a></li>
+                <li><a href="onorarii.html">Onorarii</a></li>
+               <li> <a href="#recenzii">Recenzii</a></li>
+               <li><a href="#contact">Contact</a></li>
+            </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div style="height: 150px;"></div> <!-- Doar un mic spațiu sub meniu -->
+<div style="margin: 0 100px;">
+<h1>GDPR<br>
+NOTĂ DE INFORMARE PRIVIND PRELUCRAREA DATELOR CU CARACTER PERSONAL DE CĂTRE MADRADENT SRL </h1><br>
+<p style="text-indent: 50px;">În conformitate cu prevederile Regulamentului European nr. 679/2016 (denumit în continuare și „GDPR”), în vigoare de la data de 25 mai 2018, Madradent SRL (VidaDental) are obligația de a prelucra datele cu caracter personal, în condiții de siguranță, pentru scopurile generale specificate în prezenta informare, în contextul furnizării serviciilor medicale de care beneficiați în cadrul clinicii VidaDental.</p>
+
+1. PREAMBUL<br>
+<p style="text-indent: 50px;">VidaDental se angajează sa ofere un nivel corespunzător regulilor GDPR de confidențialitate, disponibilitate si integritate a datelor cu caracter personal aferente oricărei persoane vizate prin activitățile de prelucrare efectuate, inclusiv acțiunile noastre de prestări servicii sau de marketing.
+
+Prin prezenta informare dorim să vă explicam modul în care are loc prelucrarea datelor dumneavoastră cu caracter personal de către VidaDental.</p><br>
+
+<p style="text-indent: 50px;">Datele cu caracter personal (reprezentând orice fel de informații care pot duce la identificarea, direct sau indirect, a unei persoane fizice) sunt detaliate în secțiunea 6 de mai jos, fiind definite în considerarea dispozițiilor legale aplicabile.</p><br>
+
+<p style="text-indent: 50px;">Pentru îndeplinirea scopurilor acestei informări, vă aducem la cunoștință faptul că VidaDental este operator de date cu caracter personal, astfel cum este acesta definit conform GDPR.</p>
+
+
+   
+ 2.IDENTITATEA ȘI DATELE DE CONTACT ALE OPERATORULUI
+   
+
+
+    <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <td style="width: 150px; vertical-align: top; padding-bottom: 10px;"><strong>Denumire:</strong></td>
+            <td style="padding-bottom: 10px;">MADRADENT SRL</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top; padding-bottom: 10px;"><strong>Sediul social:</strong></td>
+            <td style="padding-bottom: 10px;">Prahova, Ploiești, Bulevardul Republicii 153, bl. 29C, ap. 4, parter</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top; padding-bottom: 10px;"><strong>C.U.I.:</strong></td>
+            <td style="padding-bottom: 10px;">15801244</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top; padding-bottom: 10px;"><strong>Nr. ORC:</strong></td>
+            <td style="padding-bottom: 10px;">J29/1351/04.09.2003</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top; padding-bottom: 10px;"><strong>Telefon:</strong></td>
+            <td style="padding-bottom: 10px;">0748 358 358</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top; padding-bottom: 10px;"><strong>E-mail:</strong></td>
+            <td style="padding-bottom: 10px;"><a href="mailto:contact@vidadental.ro" style="color: #f23a2e; text-decoration: none;">contact@vidadental.ro</a></td>
+        </tr>
+    </table>
+
+3. DATELE DE CONTACT ALE RESPONSABILULUI CU PROTECTIA DATELOR (DPO)<br>
+<p style="text-indent: 50px;">Datele de contact ale persoanei responsabile cu protecția datelor (denumita si „DPO”, en. Data Protection Officer) in cadrul VidaDental și pe care o veți putea contacta in legătura cu orice aspecte referitoare la protecția datelor dumneavoastră cu caracter personal:</p>
+
+     <table style="width: 100%; border-collapse: collapse;">
+         <tr>
+            <td style="vertical-align: top; padding-bottom: 10px;"><strong>E-mail:</strong></td>
+            <td style="padding-bottom: 10px;"><a href="mailto:contact@vidadental.ro" style="color: #f23a2e; text-decoration: none;">contact@vidadental.ro</a></td>
+        </tr>
+    </table>
+
+4. SCOPURILE ÎN CARE SUNT PRELUCRATE DATELE DUMNEAVOASTRĂ CU CARACTER PERSONAL<br>
+<p style="text-indent: 50px;">Prelucrarea și stocarea datelor cu caracter personal este făcută în condiții de securitate optime și în scopuri legitime legate în principal de desfășurarea activității de prestare a serviciilor medicale sau aferente activității de resurse umane, pentru reclamă, marketing, publicitate, statistică, sau științifică. De fiecare dată când solicităm colectarea, ulterior prelucrarea și eventual transferul datelor cu caracter personal, utilizarea se va face doar în scopul menționat, pentru alte scopuri urmând să vă dați acordul sau să fiți informați conform prevederilor GDPR. </p><br>
+
+<p style="text-indent: 50px;">Datele dumneavoastră cu caracter personal indicate în secțiunea 6 de mai jos vor fi prelucrate în următoarele scopuri:</p>
+
+<p>1. Prestarea serviciilor medicale: Prestarea serviciilor medicale solicitate de dumneavoastră, stabilirea unui diagnostic medical, furnizarea de asistență medicală sau a unui tratament medical sau de gestionare a sistemelor și a serviciilor de sănătate, înregistrarea serviciilor medicale prestate, comunicarea cu dumneavoastră cu privire la serviciile medicale furnizate, informarea dumneavoastră cu privire la serviciile medicale prestate, programări, identificarea dumneavoastră și a serviciilor accesate.<br>
+2. Marketing: Informări periodice cu caracter medical sau referitoare la serviciile, promoțiile VidaDental etc. Prelucrarea în acest scop va fi realizată numai dacă există acordul dumneavoastră exprimat în scris și numai atât timp cât vă mențineți acest acord. Vă puteți retrage oricând acest acord făcând click pe link-ul „Dezabonare” din subsolul oricărui e-mail pe care îl veți primi de la noi sau contactându-ne la adresa de email contact@vidadental.ro.<br>
+3. Statistică medicală sau scop științific: Prelucrarea în acest scop va fi realizată numai la solicitarea scrisă a instituțiilor statului cu atribuții în domeniul statisticii, respectiv în scop științific. Datele dumneavoastră cu caracter personal rămân în continuare securizate și în deplină confidențialitate, acestea nefiind dezvăluite către terți.<br>
+4. Îndeplinirea obligațiilor legale: Prelucrarea în vederea îndeplinirii diverselor obligații legale ale VidaDental (cum ar fi: în domeniul sănătății, securității, contabilitate, păstrarea arhivelor ori alte obligații impuse de legile în vigoare).<br>
+5. Îmbunătățirea serviciilor și soluționarea sesizărilor: Identificarea problemelor sau a unor posibile chestiuni relevante referitoare la serviciile existente în scopul de a le îmbunătăți, implementarea noilor servicii sau a îmbunătățirilor aduse celor existente, soluționarea sesizărilor formulate de dumneavoastră.<br>
+6. Supraveghere video: VidaDental prelucrează date cu caracter personal prin mijloace de supraveghere video, prelucrarea având ca scop asigurarea securității persoanelor și bunurilor, precum și a pazei și protecției bunurilor, imobilelor, valorilor, fără a fi prejudiciate drepturile și libertățile fundamentale sau interesul dumneavoastră. Prelucrarea datelor cu caracter personal prin utilizarea sistemelor de supraveghere video ține cont de următoarele reguli: camerele de supraveghere video se află în locuri vizibile, semnalizate, iar persoanele vizate sunt informate asupra existenței acestora prin intermediul unui panou de informare realizat în acest sens; nu sunt prelucrate prin mijloacele de supraveghere video date cu caracter personal în legătură cu originea rasială sau etnică, convingerile politice, religioase sau filozofice, apartenența sindicală, starea de sănătate sau viața sexuală; nu sunt instalate camere de supraveghere video în interiorul birourilor sau în spații în care se impune asigurarea intimității persoanelor sau care nu sunt destinate îndeplinirii sarcinilor de muncă, cum ar fi: vestiare, cabine de duș, toalete și alte locații similare.<br>
+7. Evidența financiară: Eliberarea documentelor financiar-contabile către dumneavoastră (spre exemplu: bonuri sau facturi fiscale), încasarea plăților pentru serviciile de care beneficiați, recuperarea datoriilor de la dumneavoastră (ceea ce poate presupune și implicarea unor terțe părți pentru recuperarea creanțelor), restituirea unor sume de bani către dumneavoastră, transmiterea de notificări legate de situația financiară/statusul plăților, elaborarea diverselor rapoarte ori situații legate de evidențele financiare.<br>
+8. Soluționarea disputelor: Formularea diverselor cereri/opinii în situația apariției unor dispute legate de serviciile prestate către dumneavoastră și/sau referitoare la relația stabilită între dumneavoastră și VidaDental.<br>
+9. Managementul activității de audit intern și extern: derularea activității de audit extern și intern pentru verificarea activităților operaționale.</p>
+ 
+
+<p style="text-indent: 50px;">VidaDental menționează că nu există vreun proces decizional automatizat (incluzând crearea de profiluri) bazat pe datele dumneavoastră cu caracter personal și ne asumăm responsabilitatea și asigurarea securității numai pentru acele informații, date cu caracter personal și categorii speciale de date cu caracter personal (date de sănătate; date genetice; dacă este cazul), care sunt oferite și prelucrate de personalul VidaDental (inclusiv medici și asistenți medicali) exclusiv și prin cumulul următoarelor coordonate:</p>
+
+<p>1.în clinica VidaDental;<br>
+2.în sistemele/instrumentele/dispozitivele informatice și/sau electronice, hardware și software, evidențele Vidadental;<br>
+3.în cadrul programului de lucru al clinicilor VidaDental.</p>
+<p style="text-indent: 50px;">VidaDental nu este responsabil pentru prelucrarea efectuată, în orice formă, în afara coordonatelor mai sus menționate (inclusiv prin schimbul înregistrării de informații/date cu caracter personal în cadrul convorbirilor dintre medici și pacienți).</p>
+
+5. TEMEIUL JURIDIC AL PRELUCRARII DATELOR CU CARACTER PERSONAL<br>
+Temeiurile juridice ale operațiunilor de prelucrare a datelor cu caracter personal desfășurate de Vidadental sunt:
+
+Temeiurile pentru prelucrarea datelor cu caracter personal care nu intră în categoriile speciale de date cu caracter personal (conform art. 6 din GDPR) sunt:
+Datele cu caracter personal care nu cuprind categorii speciale de date cu caracter personal (astfel cum sunt acestea definite conform art. 9 din GDPR) sunt prelucrate de VidaDental în baza următoarelor temeiuri juridice:
+
+Pentru a oferta sau pentru a executa un contract încheiat de VidaDental cu dumneavoastră (având ca obiect serviciile medicale puse la dispoziție de VidaDental);
+În cadrul comunicărilor de marketing, vom prelucra datele dumneavoastră cu caracter personal în baza consimțământului dumneavoastră expres (acest acord este solicitat fie prin intermediul completării unui formular în cadrul uneia din clinicile VidaDental, ce poate fi efectuată fie la înregistrarea inițială în baza de date, fie ulterior la înscrierea în formularele de pe site-ul web, la participarea la evenimente etc.), astfel cum este detaliat mai sus;
+În scopul îmbunătățirii permanente a serviciilor medicale, datele dumneavoastră cu caracter personal se prelucrează în baza consimțământului dumneavoastră exprimat prealabil;
+Îndeplinirea obligațiilor legale ale VidaDental (inclusiv cu privire la arhivare, sănătate, securitate, ținerea evidențelor, solicitarea unei autorități publice și a altor obligații pe care legislația le impune);
+În anumite situații, vom prelucra datele cu caracter personal în temeiul unui interes legitim al VidaDental sau al unei terțe părți (cum ar fi: întocmirea evidenței serviciilor medicale; evidența programărilor în sistemul software; soluționarea cererilor și reclamațiilor primite din partea pacienților; încheierea și executarea contractelor de furnizare de servicii medicale cu parteneri și colaboratori care prestează servicii medicale pentru VidaDental; supravegherea prin sistemul de camere video pentru asigurarea pazei bunurilor și persoanelor – dacă nu există o obligație legală în acest sens; managementul activității de audit intern și extern, transmiterea în cadrul grupului din care face parte VidaDental).
+ 
+
+Prelucrarea datelor cu caracter personal care intră în categorii speciale de date cu caracter personal (conform art. 9 din GDPR).
+În considerarea specificului activității/serviciilor medicale prestate de către VidaDental, vom prelucra datele cu caracter personal care intră în categoria datelor speciale (astfel cum sunt acestea definite conform art. 9 din GDPR) în baza următoarelor temeiuri juridice (temeiuri ce se vor aplica suplimentar față de temeiurile detaliate de art. 6 din GDPR):
+
+În vederea stabilirii unui diagnostic medical, pentru furnizarea de asistență medicală sau a unui tratament medical, ori pentru gestionarea sistemelor și/sau a serviciilor de sănătate;
+În considerarea anumitor situații în care dumneavoastră vă puteți afla (din punct de vedere fizic sau legal) și care vă pot pune în dificultatea de a vă exprima acordul cu privire la prelucrare (spre exemplu: situații de urgență), datele cu caracter personal vor fi prelucrate pentru a vă proteja interesele vitale ale dumneavoastră sau ale altei persoane fizice;
+Prelucrarea este necesară din motive de interes public în domeniul sănătății publice (cum ar fi: protecția împotriva amenințărilor transfrontaliere grave la adresa sănătății sau asigurarea de standarde ridicate de calitate și siguranță a asistenței medicale și a medicamentelor sau a dispozitivelor medicale, în temeiul dreptului Uniunii Europene sau al dreptului intern); și/sau
+Prelucrarea este necesară pentru a permite constatarea, exercitarea sau apărarea unui drept în instanță, având în vedere că, pe parcursul relației stabilite cu VidaDental, nu poate fi exclusă apariția unor asemenea situații în contextul serviciilor furnizate (în măsura în care astfel de dispute sunt adresate instanțelor judecătorești).
+6. CATEGORIILE DE DATE CU CARACTER PERSONAL VIZATE. CONSECINTELE REFUZULUI FURNIZARII DATELOR CU CARACTER PERSONAL<br>
+Datele cu caracter personal care vor fi prelucrate de VidaDental sunt:
+
+date obtinute direct de la dumneavoastra, in contextul serviciilor furnizate sau
+date / rezultate obtinute ca urmare a prestarii serviciilor puse la dispozitie de VidaDental.
+
+Informatiile cu caracter personal pe care le furnizati cu prilejul programarii telefonice, prin e-mail sau in clinici (nume, prenume, telefon, e-mail, data nasterii, simptome, date privind analizele si investigatiile efectuate sau pe care doriti sa le efectuati, CNP) sunt inregistrate si prelucrate de VidaDental numai in masura in care aceste informatii au fost oferite de dumneavoastra fara nicio constrangere si cu o prealabila informare. VidaDental nu isi asuma nicio raspundere pentru informatiile/datele/documentele inexacte, incorecte, pe care ni le furnizati. Dumneavoastra aveti obligatia de a ne transmite orice modificari care intervin la datele cu caracter personal astfel incat acestea sa fie in permanenta exacte si actuale. In cazul in care VidaDental are suspiciuni privind autenticitatea documentelor sau informatiilor puse la dispozitie, este indreptatit sa sesizeze autoritatile/institutiile publice cu competente de investigare, supraveghere si control.
+
+Datele cu caracter personal includ urmatoarele categorii de date:
+
+date de contact, cum ar fi: numele si prenumele, adresa de domiciliu/ resedinta, numar de telefon (fix si/sau mobil) si/sau fax, adresa de e-mail, adresa de corespondenta;
+date personale, cum ar fi: data nasterii; sexul; varsta; informatii despre consumul de tutun, alcool, cafeina sau droguri; informatii despre mediul si modul de viata; seria si numarul actului de identitate; codul numeric personal (CNP); alte informatii incluse in cartea de identitate; imagini video (obtinute pe baza inregistrarilor video efectuate in spatiile VidaDental, acolo unde sunt montate camere de supraveghere video); semnatura;
+date medicale (ce fac parte din categoriile speciale de date cu caracter personal), cum ar fi: date privind sanatatea aferente serviciilor medicale prestate (precum: serviciile medicale pe care le accesati in clinicile VidaDental; diagnostic; rezultatele analizelor pe care vi le efectuam sau pe care dumneavoastra ni le puneti la dispozitie; tratamentul pe care vi-l prescriem sau administram; medicul pe care il sau l-ati accesat; recomandari medicale; simptome; istoric medical; boli anterioare; grupa sangvina; informatii pe care ni le oferiti cu privire la membrii dumneavoastra de familie, daca este cazul); caracteristici fizice (diverse afectiuni); date genetice;; amprenta stomatologica, lucrarea tehnica dentara aferenta amprentei stomatologice; imagistica precum si orice alte informatii cu caracter medical pe care dumneavoastra ni le furnizati sau care rezulta in urma serviciilor prestate de catre VidaDental;
+date referitoare la situatia profesionala, cum ar fi: angajatorul; ocupatia;
+date referitoare la calitatea dumneavoastra de asigurat, cum ar fi: calitatea dumneavoastra de asigurat/ neasigurat; asiguratorul; numarul politei de asigurare;
+date referitoare la plati, cum ar fi: detalii de facturare; numarul contului bancar; sume achitate si/sau de achitat; statusul platilor;
+date referitoare la relatia cu VidaDental, cum ar fi: istoricul relatiei cu VidaDental; orice sugestii sau alte asemenea opinii pe care ni le transmiteti, fie in mod direct, fie prin intermediul unor alte mijloace de comunicare (care pot include si retele de socializare sau alte cai publice de comunicare).
+In principiu, nu exista o obligatie pentru dumneavoastra de a ne furniza datele dumneavoastra cu caracter personal indicate in aceasta Nota de Informare. Cu toate acestea, va rugam sa aveti in vedere ca, in masura in care nu ne oferiti datele cu caracter personal descrise, nu vom putea sa va punem la dispozitie unele dintre serviciile prestate. De ex., daca va retrageti consimtamantul, nu va vom putea pune la dispozitie serviciile medicale solicitate si/sau nu veti putea beneficia de toate facilitatile pe care VidaDental vi le ofera (spre exemplu: necomunicarea numarului de telefon / adresei de e-mail nu ne va permite sa comunicam cu dumneavoastra in ceea ce priveste confirmarea/ eventualele modificari ale programarilor). In situatia in care, in contextul serviciilor pe care VidaDental le presteaza catre dumneavoastra, ne furnizati date cu caracter personal cu privire la alte persoane in afara de dumneavoastra (cum ar fi: posibilele afectiuni care au fost intalnite in familie), va aducem la cunostinta faptul ca vom trata aceste informatii ca fiind confidentiale si le vom utiliza doar in scopul prestarii serviciilor medicale catre dumneavoastra. Totodata, tinem sa va asiguram ca vom lua toate masurile necesare pentru a asigura protectia acestor informatii in mod corespunzator, avand in vedere si obligatia VidaDental de pastrare a secretului profesional/medical.
+
+7. DESTINATARII SAU CATEGORIILE DE DESTINATARI AI DATELOR CU CARACTER PERSONAL<br>
+Ca regulă generală, datele dumneavoastră cu caracter personal vor fi prelucrate de către VidaDental. Având însă în vedere atât complexitatea serviciilor puse la dispoziția dumneavoastră de către VidaDental, apartenența acesteia la un grup de societăți care furnizează servicii medicale similare sau complementare celor puse la dispoziție de VidaDental, precum și necesitatea VidaDental de a apela la anumiți parteneri externi care oferă suport în desfășurarea activității, dorim să vă informăm că datele cu caracter personal pot fi transmise și către alte persoane fizice sau juridice, pentru a fi prelucrate în scopurile detaliate în această Notă de Informare.
+
+În acest sens, datele cu caracter personal pot fi transmise către:
+
+Medici colaboratori și furnizori de servicii medicale parteneri, acreditați, clinici partenere. În acest sens, vă informăm că datele/informațiile privind starea dumneavoastră de sănătate, amprenta stomatologică sau probele biologice, indiferent de conținutul sau volumul acestora, vor putea fi comunicate către furnizori de servicii medicale acreditați, conform dispozițiilor legale aplicabile. VidaDental depune toate eforturile pentru a se asigura că medicii colaboratori și alți furnizori de servicii medicale acreditați respectă prevederile legislației privind protecția datelor cu caracter personal.
+Instituții și/sau autorități judecătorești, de cercetare, supraveghere și control, în măsura în care, conform prevederilor legale în vigoare, date/informații cu caracter personal sunt solicitate VidaDental de diverse organe și/sau instituții (spre exemplu: organe de cercetare penală, poliție, organisme și instituții de control financiar, fiscal, instanțe de judecată, Casa Națională a Asigurărilor de Sănătate și orice alte instituții și/sau autorități de supraveghere și control), în sensul că VidaDental are obligația de a furniza datele/informațiile solicitate, fără a vă cere acordul prealabil, inclusiv în cazul în care vă opuneți sau nu vă exprimați punctul de vedere. În plus, este posibil ca, în anumite situații, astfel de date/informații să fie necesar a fi puse la dispoziție fără o solicitare prealabilă a acestor instituții, organe și/sau autorități, situații în care VidaDental va transmite datele/informațiile necesare, în conformitate cu cerințele legale;
+alte companii din grupul din care face parte VidaDental;
+"Alți destinatari, cum ar fi: furnizori de servicii de suport IT sau servicii tehnice și organizaționale în legătură cu activitățile legate de întreținerea echipamentelor medicale, furnizori de servicii de marketing, servicii de plată, servicii de arhivare, consultanți legali, auditori, consultanți în domeniul financiar-contabil sau către alți consultanți ai Societății și/sau ai unor entități din cadrul grupului VidaDental, în legătură cu operațiuni extraordinare de afaceri (de exemplu, în cazul unor fuziuni, achiziții și altele asemenea), caz în care se vor încheia acorduri de confidențialitate. De asemenea, datele cu caracter personal vor putea fi transmise și către alte persoane fizice sau juridice din România sau din afara țării în contextul necesar pentru constatarea, exercitarea și/sau apărarea unui drept al VidaDental sau al altei entități din cadrul grupului VidaDental în instanță.
+În situația în care operațiunile de prelucrare a datelor cu caracter personal vor fi efectuate de către VidaDental prin intermediul unor persoane imputernicite de aceasta, VidaDental se va asigura de respectarea cerințelor specifice impuse de dispozițiile art. 28 din GDPR, asigurându-se, printre altele, că (i) operațiunile respective de prelucrare a datelor cu caracter personal sunt efectuate în baza unui contract care să adreseze chestiunile specifice relației operator-imputernicit, conform GDPR, iar (ii) persoana imputernicită va efectua prelucrarea datelor cu caracter personal în baza instrucțiunilor VidaDental.
+
+8. TRANSFERUL CĂTRE STATE TERȚE<br>
+În anumite situații specifice, datele dumneavoastră cu caracter personal vor fi transferate către entități situate în alte state din cadrul Uniunii Europene și/sau Spațiului Economic European, pentru a efectua diverse analize sau obține opinii medicale specializate în contextul serviciilor prestate de VidaDental către dumneavoastră. În astfel de cazuri, ne vom asigura că sunt aplicabile garanții adecvate pentru a permite transferul în mod corespunzător, conform cerințelor GDPR și a legislației privind protecția datelor cu caracter personal (garanții care pot include: aplicarea unor clauze contractuale standard de protecție a datelor sau existența unei decizii a Comisiei Europene adoptată în acest sens). În fiecare caz și în vederea efectuării transferului efectiv, pacientul este înștiințat și solicitat să-și exprime acordul/dezacordul aferent situației impuse de serviciul medical respectiv, de starea de sănătate etc.
+
+9. PERIOADA PENTRU CARE VOR FI STOCATE DATELE CU CARACTER PERSONAL<br>
+Vom stoca datele cu caracter personal pentru întreaga perioadă a relației stabilite cu dumneavoastră, dar și ulterior, pentru o anumită perioadă de timp, în considerarea prevederilor legale aplicabile. Astfel, datele cu caracter personal vor fi păstrate pentru:
+
+O perioadă cuprinsă între 1 și 30 de ani (perioada de retenție extinsă fiind aplicabilă, în principiu, documentelor cu caracter medical care trebuie păstrate pentru astfel de perioade) și
+Pe durata de existență a sistemului informatic medical în ceea ce privește buletinele de rezultate pentru analizele de laborator, conform legislației în domeniu, în condiții de maximă securitate.
+În măsura în care anumite date cu caracter personal sunt incluse în sau au legătură și cu anumite documente contabile ale VidaDental, pentru care trebuie respectată o perioadă de păstrare specifică (spre exemplu 5 sau 10 ani), respectivele date cu caracter personal vor fi păstrate pentru respectivele perioade aplicabile.
+
+În ceea ce privește imaginile obținute prin mijloace de supraveghere video, acestea vor fi menținute pe o durată de maximum 30 de zile calendaristice de la data efectuării înregistrării, cu excepția cazurilor temeinic justificate sau când o durată mai extinsă este permisă sau impusă de legislația aplicabilă.
+
+10. DREPTURILE DUMNEAVOASTRĂ ÎN CEEA CE PRIVEȘTE DATELE CU CARACTER PERSONAL<br>
+În conformitate cu dispozițiile aplicabile în ceea ce privește datele cu caracter personal, vă informăm că aveți următoarele drepturi principale:
+
+Dreptul de acces la datele cu caracter personal prelucrate înseamnă dreptul dumneavoastră de a obține din partea VidaDental o confirmare că se prelucrează sau nu date cu caracter personal care vă privesc și, în caz afirmativ, accesul la datele respective și condițiile în care sunt prelucrate (inclusiv scopul prelucrării, categoriile de date prelucrate, destinatarii datelor).
+Dreptul de a solicita rectificarea datelor cu caracter personal înseamnă dreptul dumneavoastră de a ne solicita rectificarea datelor cu caracter personal inexacte, care nu mai sunt actuale sau completarea datelor incomplete.
+Dreptul la ștergerea datelor cu caracter personal include: Situația în care datele cu caracter personal nu mai sunt necesare în legătură cu scopurile prelucrării; Situația în care persoana vizată se opune la prelucrare și nu există alte interese legitime care să prevaleze pentru prelucrare; Situația în care datele cu caracter personal au fost prelucrate ilegal.
+Dreptul de a solicita restricționarea prelucrării înseamnă dreptul dumneavoastră de a obține din partea VidaDental restricționarea prelucrării în următoarele cazuri: (i) Contestați exactitatea datelor (restrictia va dura atat timp cat este necesar VidaDental sa verifice acuratețea datelor cu caracter personal); (ii) Prelucrarea este ilegală și dumneavoastră vă opuneți ștergerii datelor solicitând în schimb restricționarea utilizării lor; (iii) VidaDental nu mai are nevoie de datele cu caracter personal în scopurile mai sus menționate, dar dumneavoastră solicitați datele cu caracter personal pentru constatarea, exercitarea sau apărarea unui drept în instanță; sau (iv) Dumneavoastră v-ați opus prelucrării, pentru intervalul de timp în care VidaDental verifică dacă drepturile legitime ale VidaDental prevalează asupra drepturilor dumneavoastră.
+Dreptul de a vă opune prelucrării înseamnă dreptul dumneavoastră de a vă opune prelucrării din motive legate de situația particulară în care vă aflați, atunci când prelucrarea (i) se întemeiază pe interesele legitime ale VidaDental sau ale unei terțe părți, inclusiv în cazul activităților de profilare bazate pe acest temei sau (ii) în măsura în care este aplicabil, este realizată în scopul comunicărilor de marketing direct, implicând crearea de profiluri.
+Dreptul de a vă retrage consimțământul în orice moment, dacă prelucrarea se bazează pe consimțământ, fără a afecta legalitatea prelucrării efectuate pe baza consimțământului înainte de retragerea acestuia.
+Dreptul de a nu fi supus unei decizii automate înseamnă că, în calitate de utilizator al serviciilor noastre, nu veți face obiectul unei decizii a noastră bazate exclusiv pe prelucrarea automată a datelor dumneavoastră (inclusiv crearea de profiluri) care să producă efecte juridice cu privire la dumneavoastră sau care să vă afecteze în mod similar într-o măsură semnificativă.
+Dreptul la portabilitatea datelor înseamnă dreptul dumneavoastră de a solicita mutarea, copierea sau transferul datelor dumneavoastră cu caracter personal existente în baza de date a VidaDental către o altă bază de date, într-un format structurat, utilizat în mod curent și care poate fi citit automat, în cazul în care prelucrarea se bazează pe consimțământ sau pe un contract și este efectuată prin mijloace automate.
+Dreptul de a depune plângere în fața Autorității Naționale de Supraveghere a Prelucrării Datelor cu Caracter Personal (București, Bd. General Gheorghe Magheru 28-30, sector 1, cod poștal 010336, București, Romania, telefon : 031 805 92 11, e-mail: anspdcp@dataprotection.ro) și de a vă adresa instanțelor de judecată competente.
+Drepturile menționate la punctele A-I de mai sus pot fi exercitate printr-o cerere întocmită în scris, semnată și înregistrată la VidaDental, utilizând următoarele canale de comunicare (în atenția Responsabilului cu Protecția Datelor - DPO): (i) la adresa de e-mail contact@vidadenta.ro, (ii) la clinicile VidaDental sau (iii) transmiterea prin poștă a cererii la adresa MADRADENT SRL din Prahova, Ploiești,  B-dul Republicii 153 bl.29C ap.4 parter.
+
+În solicitarea dumneavoastră, aveți posibilitatea de a menționa dacă doriți ca informațiile să vă fie comunicate la o anumită adresă (care poate fi și o adresă de poștă electronică) sau printr-un serviciu de corespondență care să asigure predarea personală.
+
+Comunicarea informațiilor solicitate se va face în termen de 1 (o) lună de la data primirii cererii, cu respectarea eventualei dumneavoastră opțiuni de comunicare.
+
+În cazul în care nu este posibilă respectarea termenului mai sus menționat, veți fi informat(ă) asupra motivului de amânare a răspunsului, comunicându-vă totodată procedura care se are în vedere pentru soluționarea cererii dumneavoastră, precum și termenul estimat.
+
+
+
+
+
+</div>
+<footer class="site-footer border-top">
+  <div class="container-fluid px-lg-5">
+    <div class="row">
+      
+      <!-- Coloana 1: Logo & Social -->
+      <div class="col-lg-3 mb-5 mb-lg-0">
+        <div class="footer-logo mb-4">
+          <a href="index.html">
+            <img src="images/logo.png" alt="Logo Clinica" style="max-width: 200px; height: auto;">
+          </a>
+        </div>
+        <p>Scurtă descriere a clinicii sau un mesaj de bun venit pentru pacienții tăi.</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/p/Vidadental-100063529540250/" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+          <a href="https://www.instagram.com/vidadentalclinic/" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+          <a href="https://wa.me/40745166956?text=Bună%20ziua,%20doresc%20o%20programare."" target="_blank" class="pl-3 pr-3"><span class="icon-whatsapp"></span></a>
+        </div>
+      </div>
+
+      <!-- Coloana 2: Linkuri rapide -->
+      <div class="col-lg-3 mb-5 mb-lg-0">
+        <h3 class="footer-heading mb-4">Linkuri rapide</h3>
+        <ul class="list-unstyled">
+          <li><a href="#servicii">Servicii</a></li>
+          <li><a href="despre-noi.html">Despre Noi</a></li>
+          <li><a href="onorarii.html">Onorarii</a></li>
+          <li><a href="#recenzii">Recenzii</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Coloana 3: Servicii -->
+      <div class="col-lg-3 mb-5 mb-lg-0">
+        <h3 class="footer-heading mb-4">Servicii oferite</h3>
+        <ul class="list-unstyled">
+          <li><a href="#servicii">Implant dentar</a></li>
+          <li><a href="#servicii">Ortodonție</a></li>
+          <li><a href="#servicii">Protetică</a></li>
+          <li><a href="#servicii">Endodonție</a></li>
+          <li><a href="#servicii">Parodontologie</a></li>
+          <li><a href="#servicii">Urgențe stomatologice</a></li>
+        </ul>
+      </div>
+
+      <!-- Coloana 4: Legale & ANPC -->
+      <div class="col-lg-3 mb-5 mb-lg-0">
+        <h3 class="footer-heading mb-4">Informații legale</h3>
+        <ul class="list-unstyled mb-4">
+         <li><a href="politica-confidentialitate.html">Politica de confidențialitate</a></li>
+          <li><a href="politica-cookies.html">Politica de utilizare cookies</a></li>
+           <li><a href="termeni-conditii.html">Termeni și condiții</a></li>
+           <li><a href="GDPR.html">GDPR</a></li>
+        </ul>
+        <div class="anpc-logos">
+          <a style="text-decoration: none; display: block;" href="https://anpc.ro" target="_blank" rel="nofollow">
+            <img style="border:0; width:200px; margin-bottom:10px;" src="images/anpc-sal.svg" alt="SAL">
+          </a>
+          <a style="text-decoration: none; display: block;" href="https://consumer-redress.ec.europa.eu/index_en" target="_blank" rel="nofollow">
+            <img style="border:0; width:200px;" src="images/anpc-sol.svg" alt="SOL">
+          </a>
+        </div>
+      </div>
+
+    </div><!-- .row -->
+        <div class="row pt-1 mt-1 text-center">
+          <div class="col-md-12">
+<p class="footer-credits" style="display: none;">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+<p>© <script>document.write(new Date().getFullYear());</script> VidaDental. Toate drepturile rezervate.</p>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+  <div class="bara-statica">
+  <div class="continut-bara">
+    <a href="tel:0745166956">
+      <span class="icon-phone mr-2"></span>
+      
+    </a>
+    
+    <a href="https://wa.me/40745166956?text=Bună%20ziua,%20doresc%20o%20programare." target="_blank">
+      <span class="icon-whatsapp"></span>
+    </a>
+    
+    <a href="#programare" class="buton-programare">Programează-te</a>
+  </div>
+</div>
+<style>
+  /* Schimbă fundalul întregului container de navigare */
+  .site-navbar-wrap {
+    background-color: #25282a !important; /* Înlocuiește cu codul tău de culoare (ex: albastru închis) */
+  }
+
+  /* Opțional: Dacă vrei ca și bara de sus (cu social media) să aibă aceeași culoare */
+  .site-navbar-top {
+    background-color: rgba(0, 0, 0, 0.1) !important; /* O nuanță ușor diferită pentru contrast */
+  }
+
+  /* Asigură-te că meniul nu mai este transparent */
+  .site-navbar {
+    background-color: transparent !important;
+  }
+</style>
+  </body>
+</html>
