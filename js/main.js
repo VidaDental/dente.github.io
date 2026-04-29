@@ -371,9 +371,9 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 });
 const swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
+  slidesPerView: 1,       // Pe telefoane foarte mici se vede 1
+  spaceBetween: 20,       // Spațiu între recenzii
+  loop: true,             // Se repetă la infinit
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -383,7 +383,8 @@ const swiper = new Swiper(".mySwiper", {
     clickable: true,
   },
   breakpoints: {
-    640: { slidesPerView: 3 },
-    1024: { slidesPerView: 4 },
+    600: { slidesPerView: 2 },  // Pe tablete se văd 2
+    1000: { slidesPerView: 3 }, // Pe laptopuri medii se văd 3
+    1300: { slidesPerView: 4 }, // Pe ecrane mari se văd exact cele 4
   },
 });
