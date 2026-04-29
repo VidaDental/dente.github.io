@@ -370,3 +370,20 @@ window.addEventListener("DOMContentLoaded", () => {
         }, 2000); 
     }
 });
+const swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    640: { slidesPerView: 3 },
+    1024: { slidesPerView: 4 },
+  },
+});
