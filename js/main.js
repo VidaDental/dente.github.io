@@ -370,56 +370,50 @@ window.addEventListener("DOMContentLoaded", () => {
         }, 2000); 
     }
 });
-// Așteptăm ca întreg documentul să fie încărcat înainte de a rula codul
-document.addEventListener('DOMContentLoaded', () => {
+// Definim variabila global, dar nu îi dăm valoare încă
+let slider;
+let autoplayInterval;
+
+// Funcția de mișcare trebuie să fie globală pentru ca butoanele să o vadă
+function moveSlider(direction) {
+    // Dacă slider-ul nu a fost încă găsit, îl căutăm acum
+    if (!slider) slider = document.getElementById('mainSlider');
     
-    // 1. Definim variabila slider (trebuie să fie prima!)
-    const slider = document.getElementById('mainSlider');
-    let autoplayInterval;
+    if (!slider) return;
 
-    // 2. Definim funcția de mișcare în interior pentru a avea acces la variabila slider
-    window.moveSlider = function(direction) {
-        if (!slider) return;
-
-        const imagesVisible = window.innerWidth <= 768 ? 1 : 4;
-        const scrollAmount = slider.clientWidth / imagesVisible; 
-        
-        // Verificăm dacă am ajuns la final
-        const isAtEnd = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10;
-        
-        if (direction === 1 && isAtEnd) {
-            slider.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-            slider.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-        resetAutoplay();
-    };
-
-    function startAutoplay() {
-        autoplayInterval = setInterval(() => {
-            moveSlider(1);
-        }, 3000);
+    const imagesVisible = window.innerWidth <= 768 ? 1 : 4;
+    const scrollAmount = slider.clientWidth / imagesVisible; 
+    
+    // Verificăm dacă suntem la final
+    const isAtEnd = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10;
+    
+    if (direction === 1 && isAtEnd) {
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+        slider.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth'
+        });
     }
+}
 
-    function resetAutoplay() {
-        clearInterval(autoplayInterval);
-        startAutoplay();
-    }
+// Funcțiile de Autoplay
+function startAutoplay() {
+    clearInterval(autoplayInterval);
+    autoplayInterval = setInterval(() => {
+        moveSlider(1);
+    }, 3000);
+}
 
-    // 3. Pornim logica
+// Inițializare când pagina e gata
+window.onload = function() {
+    slider = document.getElementById('mainSlider');
+    
     if (slider) {
         startAutoplay();
 
-        // Pauză la mouse hover
+        // Pauză la hover
         slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
         slider.addEventListener('mouseleave', startAutoplay);
-
-        // Fix pentru resize
-        window.addEventListener('resize', () => {
-            slider.scrollTo({ left: 0, behavior: 'instant' });
-        });
     }
-});
+};
