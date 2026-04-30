@@ -1575,6 +1575,7 @@ body, html {
 /* Ajustare pentru Tablete/Mobile */
 @media (max-width: 1023px) {
   .testimonials-track {
+    animation: scroll 30s linear infinite;
     width: 600%; /* Facem track-ul și mai lung pentru a vedea mai puține poze pe ecran */
   }
   
