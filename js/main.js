@@ -370,12 +370,50 @@ window.addEventListener("DOMContentLoaded", () => {
         }, 2000); 
     }
 });
+const slider = document.getElementById('mainSlider');
+let autoplayInterval;
+
 function moveSlider(direction) {
-  const slider = document.getElementById('slider');
-  const scrollAmount = slider.clientWidth; // Cât de lată e o poză
-  
-  slider.scrollBy({
-    left: direction * scrollAmount,
-    behavior: 'smooth'
-  });
+    // Calculăm câte poze sunt pe ecran (1 pe mobil, 4 pe desktop)
+    const imagesVisible = window.innerWidth <= 768 ? 1 : 4;
+    const scrollAmount = slider.clientWidth / imagesVisible; 
+    
+    // Verificăm dacă am ajuns la final
+    const isAtEnd = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10;
+    
+    if (direction === 1 && isAtEnd) {
+        // Revenim la prima poză
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+        // Mergem la următoarea poză
+        slider.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+    
+    resetAutoplay();
 }
+
+function startAutoplay() {
+    autoplayInterval = setInterval(() => {
+        moveSlider(1);
+    }, 3000);
+}
+
+function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    startAutoplay();
+}
+
+// Pornire automată
+startAutoplay();
+
+// Pauză la mouse hover
+slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+slider.addEventListener('mouseleave', startAutoplay);
+
+// Resetare scroll la redimensionarea ferestrei pentru a evita decalajele
+window.addEventListener('resize', () => {
+    slider.scrollTo({ left: 0, behavior: 'instant' });
+});
