@@ -370,3 +370,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }, 2000); 
     }
 });
+function moveSlider(direction) {
+  const slider = document.getElementById('slider');
+  const scrollAmount = slider.clientWidth; // Cât de lată e o poză
+  
+  slider.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
+  });
+}
