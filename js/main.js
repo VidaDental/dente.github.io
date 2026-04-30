@@ -370,50 +370,56 @@ window.addEventListener("DOMContentLoaded", () => {
         }, 2000); 
     }
 });
-// 1. MAI ÎNTÂI definim variabilele
-const slider = document.getElementById('mainSlider');
-let autoplayInterval;
-
-// 2. APOI definim funcțiile care folosesc acele variabile
-function moveSlider(direction) {
-    if (!slider) return; // Siguranță în caz că ID-ul nu e găsit
-
-    const imagesVisible = window.innerWidth <= 768 ? 1 : 4;
-    const scrollAmount = slider.clientWidth / imagesVisible; 
+// Așteptăm ca întreg documentul să fie încărcat înainte de a rula codul
+document.addEventListener('DOMContentLoaded', () => {
     
-    const isAtEnd = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 50;
-    
-    if (direction === 1 && isAtEnd) {
-        slider.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-        slider.scrollBy({
-            left: direction * scrollAmount,
-            behavior: 'smooth'
+    // 1. Definim variabila slider (trebuie să fie prima!)
+    const slider = document.getElementById('mainSlider');
+    let autoplayInterval;
+
+    // 2. Definim funcția de mișcare în interior pentru a avea acces la variabila slider
+    window.moveSlider = function(direction) {
+        if (!slider) return;
+
+        const imagesVisible = window.innerWidth <= 768 ? 1 : 4;
+        const scrollAmount = slider.clientWidth / imagesVisible; 
+        
+        // Verificăm dacă am ajuns la final
+        const isAtEnd = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10;
+        
+        if (direction === 1 && isAtEnd) {
+            slider.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            slider.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+        resetAutoplay();
+    };
+
+    function startAutoplay() {
+        autoplayInterval = setInterval(() => {
+            moveSlider(1);
+        }, 3000);
+    }
+
+    function resetAutoplay() {
+        clearInterval(autoplayInterval);
+        startAutoplay();
+    }
+
+    // 3. Pornim logica
+    if (slider) {
+        startAutoplay();
+
+        // Pauză la mouse hover
+        slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+        slider.addEventListener('mouseleave', startAutoplay);
+
+        // Fix pentru resize
+        window.addEventListener('resize', () => {
+            slider.scrollTo({ left: 0, behavior: 'instant' });
         });
     }
-}
-
-function startAutoplay() {
-    stopAutoplay(); // Ne asigurăm că nu pornim mai multe intervale deodată
-    autoplayInterval = setInterval(() => {
-        moveSlider(1);
-    }, 3000);
-}
-
-function stopAutoplay() {
-    clearInterval(autoplayInterval);
-}
-
-// 3. LA FINAL executăm codul
-if (slider) {
-    startAutoplay();
-
-    // Pauză la hover
-    slider.addEventListener('mouseenter', stopAutoplay);
-    slider.addEventListener('mouseleave', startAutoplay);
-
-    // Resetare la resize
-    window.addEventListener('resize', () => {
-        slider.scrollTo({ left: 0, behavior: 'instant' });
-    });
-}
+});
