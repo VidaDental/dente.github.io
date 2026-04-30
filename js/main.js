@@ -370,50 +370,50 @@ window.addEventListener("DOMContentLoaded", () => {
         }, 2000); 
     }
 });
+// 1. MAI ÎNTÂI definim variabilele
 const slider = document.getElementById('mainSlider');
 let autoplayInterval;
 
+// 2. APOI definim funcțiile care folosesc acele variabile
 function moveSlider(direction) {
-    // Calculăm câte poze sunt pe ecran (1 pe mobil, 4 pe desktop)
+    if (!slider) return; // Siguranță în caz că ID-ul nu e găsit
+
     const imagesVisible = window.innerWidth <= 768 ? 1 : 4;
     const scrollAmount = slider.clientWidth / imagesVisible; 
     
-    // Verificăm dacă am ajuns la final
-    const isAtEnd = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10;
+    const isAtEnd = slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 50;
     
     if (direction === 1 && isAtEnd) {
-        // Revenim la prima poză
         slider.scrollTo({ left: 0, behavior: 'smooth' });
     } else {
-        // Mergem la următoarea poză
         slider.scrollBy({
             left: direction * scrollAmount,
             behavior: 'smooth'
         });
     }
-    
-    resetAutoplay();
 }
 
 function startAutoplay() {
+    stopAutoplay(); // Ne asigurăm că nu pornim mai multe intervale deodată
     autoplayInterval = setInterval(() => {
         moveSlider(1);
     }, 3000);
 }
 
-function resetAutoplay() {
+function stopAutoplay() {
     clearInterval(autoplayInterval);
-    startAutoplay();
 }
 
-// Pornire automată
-startAutoplay();
+// 3. LA FINAL executăm codul
+if (slider) {
+    startAutoplay();
 
-// Pauză la mouse hover
-slider.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-slider.addEventListener('mouseleave', startAutoplay);
+    // Pauză la hover
+    slider.addEventListener('mouseenter', stopAutoplay);
+    slider.addEventListener('mouseleave', startAutoplay);
 
-// Resetare scroll la redimensionarea ferestrei pentru a evita decalajele
-window.addEventListener('resize', () => {
-    slider.scrollTo({ left: 0, behavior: 'instant' });
-});
+    // Resetare la resize
+    window.addEventListener('resize', () => {
+        slider.scrollTo({ left: 0, behavior: 'instant' });
+    });
+}
